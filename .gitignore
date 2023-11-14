@@ -3,6 +3,7 @@ cmock/
 .vscode/c_cpp_properties.json
 .vscode/settings.json
 bin/main
+bin/ad
 *.a
 *.o
 *.txt
