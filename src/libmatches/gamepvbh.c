@@ -17,7 +17,7 @@ int gamepvbh() {
     playerchoose = bunchtemp - bunch;
     if (bunch != 0) {
       printf("\nХод бота\n");
-      bunch = bothturn(bunch, playerchoose);
+      bunch = boteturn(bunch, playerchoose);
     }
     else {
       printf("Победил бот!\n");
@@ -32,7 +32,7 @@ int gamepvbh() {
   return 1;
 }
 
-int bothturn(int bunchofmatches, int playerchoose) {
+int boteturn(int bunchofmatches, int playerchoose) {
   int botchoose;
   printf("Спичек в куче: %d\n", bunchofmatches);
   if (bunchofmatches > 92) {
