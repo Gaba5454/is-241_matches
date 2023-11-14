@@ -5,18 +5,21 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-20.04
-
+    
     steps:
       - uses: actions/checkout@v2
 
       - name: Check codestyle
-        run: ls-files *.{c,h} | xargs clang-format -i && git diff --exit-code
+        run: git ls-files *.{cpp,h} | xargs clang-format -i --verbose && git diff --exit-code
+
+      - name: Install GTK+
+        run: sudo apt-get install libgtk-3-dev
 
       - name: Build application
         run: make
-        
-      - name: Build test
-        run: make test
 
-      - name: Run test
-        run: bin/matchestest
+      - name: Test application
+        run: make test_comp
+
+      - name: Test show
+        run: make test_show
