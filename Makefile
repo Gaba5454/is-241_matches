@@ -14,7 +14,7 @@ PVBH_NAME = gamepvbh
 
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
-CPPFLAGS_TEST = -I test -I src -MP -MMD
+CPPFLAGS_TEST = -I thirdparty -I src -MP -MMD
 
 BIN_DIR = bin
 OBJ_DIR = obj
