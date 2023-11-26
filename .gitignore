@@ -3,5 +3,4 @@
 bin/main
 bin/ad
 *.a
-*.o
 *.txt
