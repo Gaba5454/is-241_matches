@@ -45,40 +45,40 @@ all: $(APP_PATH)
 -include $(DEPS)
 
 $(APP_PATH): $(APP_OBJECTS) $(LIB_PATH)
- $(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@ $(LDFLAGS) $(LDLIBS)
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
 $(LIB_PATH): $(LIB_OBJECTS)
- ar rcs $@ $^
+	ar rcs $@ $^
 
 $(OBJ_DIR)/$(SRC_DIR)/$(MAT_NAME)/$(APP_NAME).o: $(SRC_DIR)/$(MAT_NAME)/$(APP_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(RULES_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(RULES_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(PVP_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(PVP_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(CHOOSE_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(CHOOSE_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(DIFF_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(DIFF_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(CHECK_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(CHECK_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(PVBE_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(PVBE_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 $(OBJ_DIR)/$(SRC_DIR)/$(LIB_NAME)/$(PVBH_NAME).o: $(SRC_DIR)/$(LIB_NAME)/$(PVBH_NAME).$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDLIBS)
 
 .PHONY: clean
 clean:
- $(RM) $(APP_PATH) $(LIB_PATH) $(APP_PATH_TEST)
- find $(OBJ_DIR) -name '*.o' -exec $(RM) '{}' \;
- find $(OBJ_DIR) -name '*.d' -exec $(RM) '{}' \;
+	$(RM) $(APP_PATH) $(LIB_PATH) $(APP_PATH_TEST)
+	find $(OBJ_DIR) -name '*.o' -exec $(RM) '{}' \;
+	find $(OBJ_DIR) -name '*.d' -exec $(RM) '{}' \;
 
 .PHONY: test
 test: $(APP_PATH_TEST)
@@ -86,7 +86,7 @@ test: $(APP_PATH_TEST)
 -include $(DEPS_TEST)
 
 $(APP_PATH_TEST): $(APP_OBJECTS_TEST) $(LIB_PATH)
- $(CC) $(CFLAGS) $(CPPFLAGS_TEST) $^ -o $@ $(LDFLAGS)
+	$(CC) $(CFLAGS) $(CPPFLAGS_TEST) $^ -o $@ $(LDFLAGS)
 
 $(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.$(SRC_EXT)
- $(CC) -c $(CFLAGS) $(CPPFLAGS_TEST) $< -o $@
+	$(CC) -c $(CFLAGS) $(CPPFLAGS_TEST) $< -o $@
