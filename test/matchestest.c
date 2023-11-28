@@ -4,7 +4,7 @@
 #include "../src/libmatches/difficulty.h"
 #include "../src/libmatches/gamepvp.h"
 #include "../src/libmatches/gamepvbh.h"
-#include "../test/ctest.h"
+#include "../thirdparty/ctest.h"
 
 CTEST(checktruth, check_first) {
   const int checkvalue = 5;
