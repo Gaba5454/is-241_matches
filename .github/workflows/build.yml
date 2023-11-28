@@ -10,9 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Check codestyle
-        run: |
-          ls *.{c,h} | xargs clang-format -i 
-          git diff --exit-code
+        run: ls-files *.{c,h} | xargs clang-format -i && git diff --exit-code
 
       - name: Build application
         run: make
@@ -21,4 +19,4 @@ jobs:
         run: make test
 
       - name: Run test
-        run: ./bin/matchestest
+        run: bin/matchestest
