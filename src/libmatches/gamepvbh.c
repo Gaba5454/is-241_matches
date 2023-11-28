@@ -1,6 +1,6 @@
-#include "src/libmatches/gamepvbh.h"
-#include "src/libmatches/gamepvp.h"
-#include "src/libmatches/commonrules.h"
+#include "libmatches/gamepvbh.h"
+#include "libmatches/gamepvp.h"
+#include "libmatches/commonrules.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
